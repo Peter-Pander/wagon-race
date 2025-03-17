@@ -24,11 +24,27 @@ function movePlayer(playerCells, playerPosition) {
   return playerPosition;
 }
 
+// Function to show the winner message inside the finish-line cell
+function showWinnerMessage(player) {
+  const finishCell = document.querySelector(`#${player}-race .finish-line`);
+  if (!finishCell) return; // Prevent errors if the finish cell is missing
+
+  let winnerMessage = finishCell.querySelector(".winner-message");
+
+  if (!winnerMessage) {
+    // Create a new span for the message if it doesn't exist
+    winnerMessage = document.createElement("span");
+    winnerMessage.classList.add("winner-message");
+    finishCell.appendChild(winnerMessage);
+  }
+
+  winnerMessage.textContent = `${player.replace("player", "Player ")} wins! 🏆`;
+  winnerMessage.style.display = "block";
+}
+
 // Function to announce the winner
 function announceWinner(winner) {
-  const winnerMessage = document.getElementById("winner-message");
-  winnerMessage.textContent = `${winner} wins! 🏆`;
-  winnerMessage.style.display = "block"; // Show the winner message
+  showWinnerMessage(winner);
   gameOver = true; // Set the game as over
 }
 
@@ -47,9 +63,8 @@ function restartGame() {
   player1Cells[player1Position].classList.add("active");
   player2Cells[player2Position].classList.add("active");
 
-  // Hide winner message
-  const winnerMessage = document.getElementById("winner-message");
-  winnerMessage.style.display = "none";
+  // Hide winner messages
+  document.querySelectorAll(".winner-message").forEach(msg => msg.style.display = "none");
 }
 
 // Initialize the 'active' class for the starting positions
@@ -72,7 +87,7 @@ document.addEventListener("keyup", (event) => {
     player1Position = movePlayer(player1Cells, player1Position);
     // Check if player 1 reached the finish line
     if (player1Cells[player1Position].classList.contains("finish-line")) {
-      announceWinner("Player 1");
+      announceWinner("player1");
     }
   }
 
@@ -81,7 +96,7 @@ document.addEventListener("keyup", (event) => {
     player2Position = movePlayer(player2Cells, player2Position);
     // Check if player 2 reached the finish line
     if (player2Cells[player2Position].classList.contains("finish-line")) {
-      announceWinner("Player 2");
+      announceWinner("player2");
     }
   }
 });
