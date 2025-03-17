@@ -1,0 +1,87 @@
+.centered-title {
+  text-align: center;
+  color: white;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+  border-bottom: solid 3px rgb(255, 255, 255);
+  padding: 150px 0;
+  margin: 0;
+  background-image: url('images/cyberpunk_city.jpg');
+  background-size: cover;      /* Ensures the image covers the entire width and height, while maintaining its proportions */
+  background-repeat: no-repeat; /* Prevents the image from repeating if the area is larger */
+  background-position: center;
+}
+
+
+.racer-table td {
+  height: 100px;
+  width: 100px;
+}
+
+td {
+  background-color: #D0D0D0;
+  padding: 40px;
+}
+
+.street-line {
+  border-top: solid 3px white;
+}
+
+.racer-table td.active {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#player1-race td.active {
+  background-image: url("images/player_1.png");
+  width: 650px;
+}
+
+#player2-race td.active {
+  background-image: url("images/player_2.png");
+  width: 650px;
+}
+
+/* Finish line cell */
+.racer-table td.finish-line {
+  background-image: url("images/finish.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.controls-container {
+  border-top: solid 3px rgb(255, 255, 255);
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  padding: 101px 0;
+  background-image: url('images/waves.jpg');
+  background-size: cover;      /* Ensures the image covers the entire width and height, while maintaining its proportions */
+  background-repeat: no-repeat; /* Prevents the image from repeating if the area is larger */
+}
+
+h4 {
+  color: white;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.controls {
+  border: solid 2px rgb(255, 255, 255);
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.6); */
+  background-color: rgba(31, 41, 55, 0.9);
+  box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  text-align: center;
+  padding: 30px;
+  margin: 20px 0;
+}
+
+.controls p {
+  color: white;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  margin: 5px 0; /* Add margin for spacing between paragraphs */
+}
