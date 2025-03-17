@@ -25,6 +25,7 @@ App home: (https://wagon-race.netlify.app/)
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) - Styling & Layout  
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - Game Logic & Interactivity  
 - [Bootstrap](https://getbootstrap.com/) - Styling
+- [Netlify](https://www.netlify.com/) - Deployment
 
 
 
